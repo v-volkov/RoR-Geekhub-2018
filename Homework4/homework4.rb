@@ -24,17 +24,17 @@ class Homework4
       geometric_mean_mod: Math.sqrt((first_number.abs * second_number.abs)).round(2) }
   end
 
-  def task_6(side_1, side_2)
-    { hypotenuse: Math.sqrt(side_1**2 + side_2**2).round(2),
-      square: side_1 * side_2 / 2 }
+  def task_6(side1, side2)
+    { hypotenuse: Math.sqrt(side1**2 + side2**2).round(2),
+      square: side1 * side2 / 2 }
   end
 
   def task_8(number_angle, radius)
     { perimeter: (2 * number_angle * radius * Math.tan(Math::PI / number_angle)).round(2) }
   end
 
-  def task_9(resistor_1, resistor_2, resistor_3)
-    { total_resistance: (1 / (1 / resistor_1.to_f + 1 / resistor_2.to_f + 1 / resistor_3.to_f)).round(2) }
+  def task_9(resistor1, resistor2, resistor3)
+    { total_resistance: (1 / (1 / resistor1.to_f + 1 / resistor2.to_f + 1 / resistor3.to_f)).round(2) }
   end
 
   def task_10(height)
@@ -49,8 +49,8 @@ class Homework4
     { oscillation_period: (2**Math::PI * Math.sqrt(length) / 9.8).round(2) }
   end
 
-  def task_14(mass_1, mass_2, distance)
-    { force_attraction: mass_1 * mass_2 * 6.67e-11 / distance**2 }
+  def task_14(mass1, mass2, distance)
+    { force_attraction: mass1 * mass2 * 6.67e-11 / distance**2 }
   end
 
   def task_15(first_leg, hypotenuse)
@@ -80,8 +80,8 @@ class Homework4
     { sum: sum }
   end
 
-  def task_22(base_1, base_2, angle)
-    { square: (((base_1 + base_2) * ((base_1 - base_2).abs / 2) * Math.sin(angle * Math::PI / 180) / \
+  def task_22(base1, base2, angle)
+    { square: (((base1 + base2) * ((base1 - base2).abs / 2) * Math.sin(angle * Math::PI / 180) / \
       Math.cos(angle * Math::PI / 180)) / 2).round(2) }
   end
 
@@ -236,7 +236,7 @@ class Homework4
       x = x.abs
       y -= 0.5
       z -= 0.5
-    elsif k = m**2
+    elsif k == m**2
       y = y.abs
       x -= 0.5
       z -= 0.5
@@ -278,12 +278,12 @@ class Homework4
     { result: age.to_s + ' ' + word }
   end
 
-  def task_87(number_1, number_2)
+  def task_87(number1, number2)
     sum = 0
     i = 0
-    while number_1 > 0 && i < number_2
-      sum += number_1 % 10
-      number_1 /= 10
+    while number1 > 0 && i < number2
+      sum += number1 % 10
+      number1 /= 10
       i += 1
     end
     { sum: sum }
@@ -330,7 +330,7 @@ class Homework4
   end
 
   def task_183(p, arr)
-    rez = arr.select { |a| (a.to_i % p.to_i == 0) && (a.to_i != 0) }.inject(1) { |r, a| r * a.to_i }
+    rez = arr.select { |a| (a.to_i % p.to_i).zero? && (a.to_i != 0) }.inject(1) { |r, a| r * a.to_i }
     { result: rez }
   end
 
@@ -347,7 +347,6 @@ class Homework4
   def task_261(str)
     arr = str.split('')
     space = 0
-    i = 0
     s = 0
     rez = 0
     e = 0
