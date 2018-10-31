@@ -1,4 +1,4 @@
-class Homework4
+class FirstProject
   def task_1(first_number, second_number)
     { sum: first_number + second_number,
       dif: first_number - second_number,
@@ -672,51 +672,8 @@ class Homework4
   end
 end
 
-homework4 = Homework4.new
+project = FirstProject.new
 
-homework4.test_1
-homework4.test_2
-homework4.test_3
-homework4.test_4
-homework4.test_5
-homework4.test_6
-homework4.test_8
-homework4.test_9
-homework4.test_10
-homework4.test_12
-homework4.test_13
-homework4.test_14
-homework4.test_15
-homework4.test_16
-homework4.test_17
-homework4.test_19
-homework4.test_20
-homework4.test_22
-homework4.test_24
-homework4.test_25
-homework4.test_26
-homework4.test_27
-homework4.test_28
-homework4.test_33
-homework4.test_36
-homework4.test_37
-homework4.test_38
-homework4.test_39
-homework4.test_40
-homework4.test_41
-homework4.test_45
-homework4.test_47
-homework4.test_62
-homework4.test_63
-homework4.test_64
-homework4.test_65
-homework4.test_66
-homework4.test_74
-homework4.test_87
-homework4.test_107
-homework4.test_108
-homework4.test_109
-homework4.test_183
-homework4.test_251
-homework4.test_252
-homework4.test_261
+project.methods.each do |method|
+  project.send(method) if /test/.match?(method)
+end
