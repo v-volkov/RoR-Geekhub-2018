@@ -1,0 +1,18 @@
+GEM
+  remote: https://rubygems.org/
+  specs:
+    math_tasks (1.0.1)
+    math_test_suite (1.0.1)
+
+PLATFORMS
+  ruby
+
+DEPENDENCIES
+  math_tasks
+  math_test_suite
+
+RUBY VERSION
+   ruby 2.5.1p57
+
+BUNDLED WITH
+   1.16.6
